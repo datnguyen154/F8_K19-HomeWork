@@ -1,0 +1,39 @@
+h1 {
+    color: red;
+}
+
+h2 {
+    color: rgb(124, 93, 93);
+}
+
+h3 {
+    color: rgb(139, 150, 70);
+}
+
+p {
+    color: #333;
+}
+
+.title {
+    color: yellow;
+}
+
+.section {
+    color: #2e4c66;
+}
+
+.highlight {
+    color: #179f98;
+}
+
+.big {
+    color: rgb(184, 122, 47);
+}
+
+#main {
+    color: aquamarine;
+}
+
+#special {
+    color: purple;
+}
