@@ -124,6 +124,19 @@
             #red:checked ~ .preview-area .profile-name {
                 color: red;
             }
+
+            /* Text Alignment */
+            #left:checked ~ .preview-area .profile-card {
+                text-align: left;
+            }
+
+            #center:checked ~ .preview-area .profile-card {
+                text-align: center;
+            }
+
+            #right:checked ~ .preview-area .profile-card {
+                text-align: right;
+            }
         </style>
     </head>
     <body>
@@ -149,6 +162,11 @@
             <input type="radio" id="blue-name" name="name-color" />
             <input type="radio" id="green" name="name-color" />
             <input type="radio" id="red" name="name-color" />
+
+            <!-- Text Alignment Input -->
+            <input type="radio" id="left" name="text-align" />
+            <input type="radio" id="center" name="text-align" />
+            <input type="radio" id="right" name="text-align" />
 
             <div class="control-panel">
                 <div class="title">Tùy chỉnh hồ sơ</div>
@@ -181,6 +199,12 @@
                 <label for="blue-name">Blue</label>
                 <label for="green">Green</label>
                 <label for="red">Red</label>
+
+                <!-- Text Alignment -->
+                <div class="group-title">5. Căn lề hồ sơ</div>
+                <label for="left">Left</label>
+                <label for="center">Center</label>
+                <label for="right">Right</label>
             </div>
 
             <div class="preview-area">
