@@ -44,6 +44,12 @@
                 cursor: pointer;
             }
 
+            label:has(input:checked) {
+                font-weight: bold;
+                background: #bbb;
+                color: #000;
+            }
+
             .preview-area,
             .control-panel {
                 display: inline-block;
@@ -58,23 +64,23 @@
 
             /* Background Theme */
 
-            #light:checked ~ .preview-area .profile-card {
+            .container:has(#light:checked) .profile-card {
                 background: white;
             }
 
-            #gray:checked ~ .preview-area .profile-card {
+            .container:has(#gray:checked) .profile-card {
                 background: lightgray;
             }
 
-            #yellow:checked ~ .preview-area .profile-card {
+            .container:has(#yellow:checked) .profile-card {
                 background: lightyellow;
             }
 
-            #blue:checked ~ .preview-area .profile-card {
+            .container:has(#blue:checked) .profile-card {
                 background: lightblue;
             }
 
-            #pink:checked ~ .preview-area .profile-card {
+            .container:has(#pink:checked) .profile-card {
                 background: pink;
             }
 
@@ -120,149 +126,238 @@
             }
 
             /* Name Size */
-            #small:checked ~ .preview-area .profile-name {
+            .container:has(#small:checked) .profile-name {
                 font-size: 2rem;
             }
 
-            #medium:checked ~ .preview-area .profile-name {
+            .container:has(#medium:checked) .profile-name {
                 font-size: 2.4rem;
             }
 
-            #large:checked ~ .preview-area .profile-name {
+            .container:has(#large:checked) .profile-name {
                 font-size: 2.7rem;
             }
 
             /* Name Text Style */
-            #normal:checked ~ .preview-area .profile-name {
+            .container:has(#normal:checked) .profile-name {
                 text-transform: none;
             }
 
-            #uppercase:checked ~ .preview-area .profile-name {
+            .container:has(#uppercase:checked) .profile-name {
                 text-transform: uppercase;
             }
 
             /* Name Color */
-            #dark:checked ~ .preview-area .profile-name {
+            .container:has(#dark:checked) .profile-name {
                 color: black;
             }
 
-            #blue-name:checked ~ .preview-area .profile-name {
+            .container:has(#blue-name:checked) .profile-name {
                 color: blue;
             }
 
-            #green:checked ~ .preview-area .profile-name {
+            .container:has(#green:checked) .profile-name {
                 color: green;
             }
 
-            #red:checked ~ .preview-area .profile-name {
+            .container:has(#red:checked) .profile-name {
                 color: red;
             }
 
             /* Text Alignment */
-            #left:checked ~ .preview-area .profile-card {
+            .container:has(#left:checked) .profile-card {
                 text-align: left;
             }
 
-            #center:checked ~ .preview-area .profile-card {
+            .container:has(#center:checked) .profile-card {
                 text-align: center;
             }
 
-            #right:checked ~ .preview-area .profile-card {
+            .container:has(#right:checked) .profile-card {
                 text-align: right;
             }
 
             /* Job Title */
-            #job-small:checked ~ .preview-area .profile-job {
+            .container:has(#job-small:checked) .profile-job {
                 font-size: 0.9rem;
             }
 
-            #job-medium:checked ~ .preview-area .profile-job {
+            .container:has(#job-medium:checked) .profile-job {
                 font-size: 1.1rem;
             }
 
-            #job-large:checked ~ .preview-area .profile-job {
+            .container:has(#job-large:checked) .profile-job {
                 font-size: 1.3rem;
+            }
+
+            /* Job Letter Spacing */
+            .container:has(#tight:checked) .profile-job {
+                letter-spacing: 0.03em;
+            }
+
+            .container:has(#space-normal:checked) .profile-job {
+                letter-spacing: 0.02em;
+            }
+
+            .container:has(#wide:checked) .profile-job {
+                letter-spacing: 0.18em;
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <!-- Background Theme Input -->
-            <input type="radio" id="light" name="background-theme" />
-            <input type="radio" id="gray" name="background-theme" />
-            <input type="radio" id="yellow" name="background-theme" />
-            <input type="radio" id="blue" name="background-theme" />
-            <input type="radio" id="pink" name="background-theme" />
-
-            <!-- Name Size Input -->
-            <input type="radio" id="small" name="name-size" />
-            <input type="radio" id="medium" name="name-size" />
-            <input type="radio" id="large" name="name-size" />
-
-            <!-- Name Text Style Input -->
-            <input type="radio" id="normal" name="text-style" />
-            <input type="radio" id="uppercase" name="text-style" />
-
-            <!-- Name Color Input -->
-            <input type="radio" id="dark" name="name-color" />
-            <input type="radio" id="blue-name" name="name-color" />
-            <input type="radio" id="green" name="name-color" />
-            <input type="radio" id="red" name="name-color" />
-
-            <!-- Text Alignment Input -->
-            <input type="radio" id="left" name="text-align" />
-            <input type="radio" id="center" name="text-align" />
-            <input type="radio" id="right" name="text-align" />
-
-            <!-- Job Title Size Input -->
-            <input type="radio" id="job-small" name="job-size" />
-            <input type="radio" id="job-medium" name="job-size" />
-            <input type="radio" id="job-large" name="job-size" />
-
             <!-- Control Panel  -->
             <div class="control-panel">
                 <div class="title">Tùy chỉnh hồ sơ</div>
                 <!-- Background Theme -->
-                <div class="group-title">1. Màu nền hồ sơ</div>
-                <label for="light">Light</label>
+                <div class="bg">
+                    <div class="group-title">1. Màu nền hồ sơ</div>
+                    <label>
+                        <input
+                            type="radio"
+                            id="light"
+                            name="background-theme"
+                        />
+                        Light
+                    </label>
 
-                <label for="gray">Gray</label>
+                    <label>
+                        <input type="radio" id="gray" name="background-theme" />
+                        Gray
+                    </label>
 
-                <label for="yellow">Yellow</label>
+                    <label>
+                        <input
+                            type="radio"
+                            id="yellow"
+                            name="background-theme"
+                        />
+                        Yellow
+                    </label>
 
-                <label for="blue">Blue</label>
+                    <label>
+                        <input type="radio" id="blue" name="background-theme" />
+                        Blue
+                    </label>
 
-                <label for="pink">Pink</label>
+                    <label>
+                        <input type="radio" id="pink" name="background-theme" />
+                        Pink
+                    </label>
+                </div>
 
                 <!-- Name Size -->
-                <div class="group-title">2. Kích thước tên</div>
-                <label for="small">Small</label>
-                <label for="medium">Medium</label>
-                <label for="large">Large</label>
+                <div class="name-size">
+                    <div class="group-title">2. Kích thước tên</div>
+                    <label>
+                        <input type="radio" id="small" name="name-size" /> Small
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            id="medium"
+                            name="name-size"
+                        />Medium
+                    </label>
+                    <label>
+                        <input type="radio" id="large" name="name-size" />Large
+                    </label>
+                </div>
 
                 <!-- Name Text Style -->
-                <div class="group-title">3. Kiểu chữ tên</div>
-                <label for="normal">Normal</label>
-                <label for="uppercase">Uppercase</label>
+                <div class="text-style">
+                    <div class="group-title">2. Kích thước tên</div>
+                    <label>
+                        <input type="radio" id="small" name="name-size" /> Small
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            id="medium"
+                            name="name-size"
+                        />Medium
+                    </label>
+                    <label>
+                        <input type="radio" id="large" name="name-size" />Large
+                    </label>
+                </div>
 
                 <!-- Name Color -->
-                <div class="group-title">4. Màu chữ tên</div>
-                <label for="dark">Dark</label>
-                <label for="blue-name">Blue</label>
-                <label for="green">Green</label>
-                <label for="red">Red</label>
+                <div class="name-color">
+                    <div class="group-title">4. Màu chữ tên</div>
+                    <label>
+                        <input type="radio" id="dark" name="name-color" />
+                        Dark
+                    </label>
+                    <label>
+                        <input type="radio" id="blue-name" name="name-color" />
+                        Blue
+                    </label>
+                    <label>
+                        <input type="radio" id="green" name="name-color" />
+                        Green
+                    </label>
+                    <label>
+                        <input type="radio" id="red" name="name-color" />Red
+                    </label>
+                </div>
 
                 <!-- Text Alignment -->
-                <div class="group-title">5. Căn lề hồ sơ</div>
-                <label for="left">Left</label>
-                <label for="center">Center</label>
-                <label for="right">Right</label>
+                <div class="text-align">
+                    <div class="group-title">5. Căn lề hồ sơ</div>
+                    <label>
+                        <input type="radio" id="left" name="text-align" />
+                        Left
+                    </label>
+                    <label>
+                        <input type="radio" id="center" name="text-align" />
+                        Center
+                    </label>
+                    <label>
+                        <input type="radio" id="right" name="text-align" />
+                        Right
+                    </label>
+                </div>
 
                 <!-- Job Title Size -->
-                <div class="group-title">6. Kích thước nghề nghiệp</div>
-                <label for="job-small">Small</label>
-                <label for="job-medium">Medium</label>
-                <label for="job-large">Large</label>
+                <div class="job-title">
+                    <div class="group-title">6. Kích thước nghề nghiệp</div>
+                    <label>
+                        <input type="radio" id="job-small" name="job-size" />
+                        Small
+                    </label>
+                    <label>
+                        <input type="radio" id="job-medium" name="job-size" />
+                        Medium
+                    </label>
+                    <label>
+                        <input type="radio" id="job-large" name="job-size" />
+                        Large
+                    </label>
+                </div>
+
+                <!-- Job Letter Spacing -->
+                <div class="job-letter">
+                    <div class="group-title">
+                        7. Khoảng cách chữ nghề nghiệp
+                    </div>
+                    <label>
+                        <input type="radio" id="tight" name="job-spacing" />
+                        Tight
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            id="space-normal"
+                            name="job-spacing"
+                        />
+                        Normal
+                    </label>
+                    <label>
+                        <input type="radio" id="wide" name="job-spacing" />
+                        Wide
+                    </label>
+                </div>
             </div>
 
             <!-- Preview Area -->
@@ -272,7 +367,7 @@
                     <!-- Info -->
                     <div class="profile-name">Nguyễn Xuân Đạt</div>
                     <div class="profile-job">
-                        Frontend Developer - Ha Noi City
+                        Frontend Developer &middot; Ha Noi City
                     </div>
                     <div class="profile-desc">
                         Tôi là một lập trình viên Frontend với hơn 3 năm kinh
