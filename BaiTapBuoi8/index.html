@@ -62,28 +62,6 @@
                 padding: 10px;
             }
 
-            /* Background Theme */
-
-            .container:has(#light:checked) .profile-card {
-                background: white;
-            }
-
-            .container:has(#gray:checked) .profile-card {
-                background: lightgray;
-            }
-
-            .container:has(#yellow:checked) .profile-card {
-                background: lightyellow;
-            }
-
-            .container:has(#blue:checked) .profile-card {
-                background: lightblue;
-            }
-
-            .container:has(#pink:checked) .profile-card {
-                background: pink;
-            }
-
             .profile-card {
                 padding: 25px;
                 height: 100vh;
@@ -123,6 +101,34 @@
                 display: inline-block;
                 margin-bottom: 20px;
                 margin-right: 10px;
+            }
+
+            .btn-contact {
+                display: inline-block;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            /* Background Theme */
+
+            .container:has(#light:checked) .profile-card {
+                background: white;
+            }
+
+            .container:has(#gray:checked) .profile-card {
+                background: lightgray;
+            }
+
+            .container:has(#yellow:checked) .profile-card {
+                background: lightyellow;
+            }
+
+            .container:has(#blue:checked) .profile-card {
+                background: lightblue;
+            }
+
+            .container:has(#pink:checked) .profile-card {
+                background: pink;
             }
 
             /* Name Size */
@@ -201,6 +207,47 @@
 
             .container:has(#wide:checked) .profile-job {
                 letter-spacing: 0.18em;
+            }
+
+            /* Description Size */
+            .container:has(#desc-small:checked) .profile-desc {
+                font-size: 0.9rem;
+            }
+
+            .container:has(#desc-medium:checked) .profile-desc {
+                font-size: 1rem;
+            }
+
+            .container:has(#desc-large:checked) .profile-desc {
+                font-size: 1.125rem;
+            }
+
+            /* Description Line Height */
+            .container:has(#desc-tight:checked) .profile-desc {
+                line-height: 1.6;
+            }
+
+            .container:has(#desc-normal:checked) .profile-desc {
+                line-height: 1.8;
+            }
+
+            .container:has(#desc-loose:checked) .profile-desc {
+                line-height: 2;
+            }
+
+            /* Contact Button Color */
+            .container:has(#btn-dark:checked) .btn-contact {
+                background: #1a1a1a;
+                color: #fff;
+            }
+
+            .container:has(#btn-blue:checked) .btn-contact {
+                background: blue;
+                color: #fff;
+            }
+
+            .container:has(#btn-light:checked) .btn-contact {
+                background: #f5f5f5;
             }
         </style>
     </head>
@@ -357,6 +404,82 @@
                         Wide
                     </label>
                 </div>
+
+                <!-- Description Size -->
+                <div class="desc-size">
+                    <div class="group-title">8. Kích thước mô tả</div>
+                    <label>
+                        <input type="radio" id="desc-small" name="desc-size" />
+                        Small
+                    </label>
+                    <label>
+                        <input type="radio" id="desc-medium" name="desc-size" />
+                        Medium
+                    </label>
+                    <label>
+                        <input type="radio" id="desc-large" name="desc-size" />
+                        Large
+                    </label>
+                </div>
+
+                <!-- Description Line Height -->
+                <div class="desc-line-height">
+                    <div class="group-title">9. Giãn dòng mô tả</div>
+                    <label>
+                        <input
+                            type="radio"
+                            id="desc-tight"
+                            name="desc-line-height"
+                        />
+                        Tight
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            id="desc-normal"
+                            name="desc-line-height"
+                        />
+                        Normal
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            id="desc-loose"
+                            name="desc-line-height"
+                        />
+                        Loose
+                    </label>
+                </div>
+
+                <!-- Contact Button Color -->
+                <div class="contact-btn">
+                    <div class="group-title">10. Màu nút liên hệ</div>
+                    <label>
+                        <input
+                            type="radio"
+                            id="btn-dark"
+                            name="contact-btn"
+                        />Dark
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            id="btn-blue"
+                            name="contact-btn"
+                        />Blue
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            id="btn-light"
+                            name="contact-btn"
+                        />Light
+                    </label>
+                </div>
             </div>
 
             <!-- Preview Area -->
@@ -392,7 +515,9 @@
                     <span class="hobby-tag">Cà phê</span>
 
                     <!-- Contact -->
-                    <div class="btn-contact">Liên hệ với tôi</div>
+                    <div>
+                        <div class="btn-contact">Liên hệ với tôi</div>
+                    </div>
                 </div>
             </div>
         </div>
