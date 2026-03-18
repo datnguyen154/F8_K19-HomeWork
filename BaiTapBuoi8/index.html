@@ -79,11 +79,44 @@
             }
 
             .profile-card {
-                padding: 18px;
+                padding: 25px;
+                height: 100vh;
             }
 
             .profile-name {
+                line-height: 1.2;
+            }
+
+            .profile-job {
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+
+            .profile-desc {
+                line-height: 1.8;
+                margin-bottom: 12px;
+            }
+
+            .skill-list {
+                margin-bottom: 10px;
+            }
+
+            .skill-tag {
+                display: inline-block;
+                margin-right: 4px;
+                margin-bottom: 12px;
+                padding: 5px;
+                background: #f0f0f0;
+            }
+
+            .hobby-list {
                 margin-bottom: 8px;
+            }
+
+            .hobby-tag {
+                display: inline-block;
+                margin-bottom: 20px;
+                margin-right: 10px;
             }
 
             /* Name Size */
@@ -137,6 +170,19 @@
             #right:checked ~ .preview-area .profile-card {
                 text-align: right;
             }
+
+            /* Job Title */
+            #job-small:checked ~ .preview-area .profile-job {
+                font-size: 0.9rem;
+            }
+
+            #job-medium:checked ~ .preview-area .profile-job {
+                font-size: 1.1rem;
+            }
+
+            #job-large:checked ~ .preview-area .profile-job {
+                font-size: 1.3rem;
+            }
         </style>
     </head>
     <body>
@@ -168,6 +214,12 @@
             <input type="radio" id="center" name="text-align" />
             <input type="radio" id="right" name="text-align" />
 
+            <!-- Job Title Size Input -->
+            <input type="radio" id="job-small" name="job-size" />
+            <input type="radio" id="job-medium" name="job-size" />
+            <input type="radio" id="job-large" name="job-size" />
+
+            <!-- Control Panel  -->
             <div class="control-panel">
                 <div class="title">Tùy chỉnh hồ sơ</div>
                 <!-- Background Theme -->
@@ -205,8 +257,15 @@
                 <label for="left">Left</label>
                 <label for="center">Center</label>
                 <label for="right">Right</label>
+
+                <!-- Job Title Size -->
+                <div class="group-title">6. Kích thước nghề nghiệp</div>
+                <label for="job-small">Small</label>
+                <label for="job-medium">Medium</label>
+                <label for="job-large">Large</label>
             </div>
 
+            <!-- Preview Area -->
             <div class="preview-area">
                 <div class="title">Preview hồ sơ cá nhân</div>
                 <div class="profile-card">
