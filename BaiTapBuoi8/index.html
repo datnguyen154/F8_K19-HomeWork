@@ -107,6 +107,23 @@
             #uppercase:checked ~ .preview-area .profile-name {
                 text-transform: uppercase;
             }
+
+            /* Name Color */
+            #dark:checked ~ .preview-area .profile-name {
+                color: black;
+            }
+
+            #blue-name:checked ~ .preview-area .profile-name {
+                color: blue;
+            }
+
+            #green:checked ~ .preview-area .profile-name {
+                color: green;
+            }
+
+            #red:checked ~ .preview-area .profile-name {
+                color: red;
+            }
         </style>
     </head>
     <body>
@@ -126,6 +143,12 @@
             <!-- Name Text Style Input -->
             <input type="radio" id="normal" name="text-style" />
             <input type="radio" id="uppercase" name="text-style" />
+
+            <!-- Name Color Input -->
+            <input type="radio" id="dark" name="name-color" />
+            <input type="radio" id="blue-name" name="name-color" />
+            <input type="radio" id="green" name="name-color" />
+            <input type="radio" id="red" name="name-color" />
 
             <div class="control-panel">
                 <div class="title">Tùy chỉnh hồ sơ</div>
@@ -151,6 +174,13 @@
                 <div class="group-title">3. Kiểu chữ tên</div>
                 <label for="normal">Normal</label>
                 <label for="uppercase">Uppercase</label>
+
+                <!-- Name Color -->
+                <div class="group-title">4. Màu chữ tên</div>
+                <label for="dark">Dark</label>
+                <label for="blue-name">Blue</label>
+                <label for="green">Green</label>
+                <label for="red">Red</label>
             </div>
 
             <div class="preview-area">
