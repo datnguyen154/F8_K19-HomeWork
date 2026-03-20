@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Các hình có thể tạo được với Border</title>
+        <style>
+            .box {
+                margin-bottom: 30px;
+            }
+
+            .square {
+                width: 100px;
+                height: 100px;
+                border: 3px solid #d35f4a;
+            }
+
+            .rectangle {
+                width: 200px;
+                height: 100px;
+                border: 3px solid #6ca1da;
+            }
+
+            .triangle-up {
+                width: 0;
+                height: 0;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+                border-bottom: 100px solid #6dc978;
+            }
+
+            .triangle-down {
+                width: 0;
+                height: 0;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+                border-top: 100px solid #e3a031;
+            }
+
+            .triangle-left {
+                width: 0;
+                height: 0;
+                border-top: 50px solid transparent;
+                border-bottom: 50px solid transparent;
+                border-right: 100px solid #905cb2;
+            }
+
+            .triangle-right {
+                width: 0;
+                height: 0;
+                border-top: 50px solid transparent;
+                border-bottom: 50px solid transparent;
+                border-left: 100px solid #d48332;
+            }
+
+            .trapezium {
+                width: 150px;
+                height: 0;
+
+                border-bottom: 80px solid #61b99d;
+                border-left: 40px solid transparent;
+                border-right: 40px solid transparent;
+            }
+
+            .tri-wide {
+                width: 0;
+                height: 0;
+                border-left: 80px solid transparent;
+                border-right: 80px solid transparent;
+                border-bottom: 50px solid #3a485d;
+            }
+
+            .tri-tall {
+                width: 0;
+                height: 0;
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+                border-bottom: 120px solid #ad4430;
+            }
+
+            .tri-equal {
+                width: 0;
+                height: 0;
+                border-left: 80px solid transparent;
+                border-right: 80px solid transparent;
+                border-bottom: 80px solid #c05c19;
+            }
+
+            .arrow-right {
+                width: 0;
+                height: 0;
+                border-top: 40px solid transparent;
+                border-bottom: 40px solid transparent;
+                border-left: 80px solid #529e86;
+            }
+
+            .arrow-left {
+                width: 0;
+                height: 0;
+                border-top: 40px solid transparent;
+                border-bottom: 40px solid transparent;
+                border-right: 80px solid #8348a9;
+            }
+
+            /* Ribbon */
+            .ribbon {
+                font-size: 0;
+            }
+
+            .flag-container {
+                width: 100%;
+
+                font-size: 0;
+                line-height: 0;
+            }
+
+            .flag-body {
+                display: inline-block;
+                vertical-align: top;
+                width: 150px;
+                height: 50px;
+                background-color: #d15841;
+            }
+
+            .flag-point {
+                display: inline-block;
+                vertical-align: top;
+                width: 0;
+                height: 0;
+            }
+
+            .flag-row.upper {
+                display: block;
+            }
+
+            .flag-point.upper {
+                border-top: 50px solid #d15841;
+                border-right: 50px solid transparent;
+            }
+
+            .flag-row.lower {
+                display: block;
+            }
+
+            .flag-point.lower {
+                border-bottom: 50px solid #d15841;
+                border-right: 50px solid transparent;
+            }
+
+            .flag-label {
+                font-size: 14px;
+                line-height: 1.2;
+                color: #333;
+                margin-top: 10px;
+                text-align: left;
+            }
+
+            /* F8 */
+            .shape {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .f {
+                width: 140px;
+            }
+
+            .vertical {
+                width: 0;
+                height: 180px;
+                border-left: 20px solid #d15841;
+            }
+
+            .top {
+                width: 120px;
+                height: 0;
+                border-top: 20px solid #d15841;
+            }
+
+            .mid {
+                width: 120px;
+                height: 0;
+                border-top: 20px solid #d15841;
+                margin-top: -120px;
+                margin-left: 0;
+            }
+
+            .eight {
+                width: 140px;
+                height: 200px;
+                border: 20px solid #d15841;
+                box-sizing: border-box;
+                margin-left: 10px;
+            }
+
+            .line {
+                width: 100%;
+                height: 0;
+                border-top: 20px solid #d15841;
+                margin-top: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Các hình có thể tạo được với Border</h1>
+        <div class="box">
+            <div class="square"></div>
+            <div>1. Hình vuông</div>
+        </div>
+
+        <div class="box">
+            <div class="rectangle"></div>
+            <div>2. Hình chữ nhật</div>
+        </div>
+
+        <div class="box">
+            <div class="triangle-up"></div>
+            <div>3. Tam giác lên</div>
+        </div>
+
+        <div class="box">
+            <div class="triangle-down"></div>
+            <div>4. Tam giác xuống</div>
+        </div>
+
+        <div class="box">
+            <div class="triangle-left"></div>
+            <div>5. Tam giác trái</div>
+        </div>
+
+        <div class="box">
+            <div class="triangle-right"></div>
+            <div>6. Tam giác phải</div>
+        </div>
+
+        <div class="box">
+            <div class="trapezium"></div>
+            <div>7. Hình thang</div>
+        </div>
+
+        <div class="box">
+            <div class="tri-wide"></div>
+            <div>8. Tam giác rộng</div>
+        </div>
+
+        <div class="box">
+            <div class="tri-tall"></div>
+            <div>9. Tam giác nhọn</div>
+        </div>
+
+        <div class="box">
+            <div class="tri-equal"></div>
+            <div>10. Tam giác cân</div>
+        </div>
+
+        <div class="box">
+            <div class="arrow-right"></div>
+            <div>11. Mũi tên phải</div>
+        </div>
+
+        <div class="box">
+            <div class="arrow-left"></div>
+            <div>12. Mũi tên trái</div>
+        </div>
+
+        <div class="box">
+            <div class="flag-container">
+                <div class="flag-row upper">
+                    <div class="flag-body"></div>
+                    <div class="flag-point upper"></div>
+                </div>
+                <div class="flag-row lower">
+                    <div class="flag-body"></div>
+                    <div class="flag-point lower"></div>
+                </div>
+            </div>
+            <div class="flag-label">13. Ribbon/Lá cờ</div>
+        </div>
+
+        <div class="shape f">
+            <div class="top"></div>
+            <div class="vertical"></div>
+            <div class="mid"></div>
+        </div>
+
+        <div class="shape eight">
+            <div class="line"></div>
+        </div>
+
+        <div>14. F8</div>
+    </body>
+</html>
