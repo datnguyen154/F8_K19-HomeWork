@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Toast thông báo</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            .open-btn {
+                display: inline-block;
+                width: 100px;
+                height: 20px;
+                background: #333333;
+                color: #fff;
+                padding: 10px 20px;
+                margin-top: 20px;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .toast {
+                display: inline-block;
+                width: 250px;
+                background: #66bb6a;
+                color: #fff;
+                padding: 16px 20px;
+                margin-left: 30px;
+                font-size: 20px;
+                font-weight: 500;
+                display: none;
+                user-select: none;
+            }
+
+            .toast span,
+            .toast label {
+                display: inline-block;
+            }
+
+            .message {
+                margin-right: 30px;
+            }
+
+            .close-btn {
+                width: 36px;
+                height: 36px;
+
+                background: rgba(0, 0, 0, 0.2);
+                color: white;
+
+                text-align: center;
+                line-height: 36px;
+
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            .close-btn:hover {
+                background: rgba(8, 8, 8, 0.35);
+            }
+
+            #toast-toggle:checked ~ .toast {
+                display: inline-block;
+            }
+
+            #close-btn:checked ~ .toast {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="toast-toggle" hidden />
+        <label for="toast-toggle" class="open-btn">Hiện thông báo</label>
+
+        <div class="toast">
+            <span>🎉</span>
+            <span class="message">Lưu thành công!</span>
+
+            <label for="toast-toggle" class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+    </body>
+</html>
