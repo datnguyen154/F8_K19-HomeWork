@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modal</title>
+        <style>
+            .open-btn {
+                display: inline-block;
+                width: 70px;
+                height: 20px;
+                background: #3b82f6;
+                color: #ffffff;
+                padding: 10px 20px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                margin-left: 40px;
+                cursor: pointer; /* hiện bàn tay chuột khi hover vào nút  */
+                user-select: none; /* ấn nhiều lần vào nội dung trong nút k bị bôi đen */
+            }
+
+            .open-btn:hover,
+            .close-btn:hover {
+                opacity: 0.8;
+            }
+
+            .overlay {
+                display: none;
+                width: 450px;
+                height: 300px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .modal {
+                display: none;
+                width: 200px;
+                height: 100px;
+                background: #ffffff;
+                vertical-align: middle; /* Căn giữa dọc trong dòng inline */
+                margin-top: -300px; /* Căn giữa dọc trong dòng inline */
+                margin-left: 70px;
+                padding: 20px;
+            }
+
+            .content {
+                color: #333333;
+            }
+
+            .close-btn {
+                display: inline-block;
+                margin-top: 25px;
+                margin-right: 100px;
+                background: #ef4444;
+                color: #ffffff;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            /*Tắt mở modal khi ấn vào label for đến id modal-toggle  */
+            #modal-toggle:checked ~ .overlay {
+                display: block;
+            }
+
+            #modal-toggle:checked ~ .modal {
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="modal-toggle" hidden />
+        <label for="modal-toggle" class="open-btn">Mở modal</label>
+
+        <label for="modal-toggle" class="overlay"></label>
+        <div class="modal">
+            <span class="content">Đây là nội dung thông báo!</span>
+            <label for="modal-toggle" class="close-btn">Đóng</label>
+        </div>
+    </body>
+</html>
