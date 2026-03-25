@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tư vấn khóa học</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                font-size: 62.5%;
+            }
+
+            body {
+                font-size: 1.6rem;
+                background: #2b2b40;
+                font-family: Arial, sans-serif;
+                height: 100vh;
+                margin: 0;
+                position: relative;
+            }
+
+            /* nút mở form */
+            .advice-btn {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                height: fit-content;
+                display: inline-block;
+                width: 15rem;
+                text-align: center;
+                padding: 1rem;
+                background: #f05123;
+                color: #ffffff;
+                border-radius: 99rem;
+                cursor: pointer;
+            }
+
+            .overlay,
+            .form {
+                display: none;
+            }
+
+            #sign-up:checked ~ .overlay,
+            #sign-up:checked ~ .form {
+                display: block;
+            }
+
+            /* lớp phủ */
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                cursor: pointer;
+            }
+
+            /* form */
+            .form {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 45rem;
+                height: fit-content;
+                background: #ffffff;
+                border-radius: 1.2rem;
+                padding: 4rem 4rem 3rem 4rem;
+                z-index: 1000;
+            }
+
+            /* nút x đóng form  */
+            .form__close {
+                position: absolute;
+                top: 1.5rem;
+                right: 2rem;
+                font-size: 2.4rem;
+                color: #888888;
+                cursor: pointer;
+            }
+
+            .form__close:hover {
+                color: #333333;
+            }
+
+            /* tiêu đề & mô tả  */
+            .title {
+                text-align: center;
+                font-size: 2.8rem;
+                font-weight: bold;
+                color: #1a202c;
+                margin-bottom: 0.8rem;
+            }
+
+            .desc {
+                text-align: center;
+                font-size: 1.4rem;
+                color: #718096;
+                margin-bottom: 2.4rem;
+            }
+
+            /* form group & label */
+            .form__group {
+                margin-bottom: 1.8rem;
+                position: relative;
+            }
+
+            .form__label {
+                display: block;
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #2d3748;
+                margin-bottom: 0.8rem;
+            }
+
+            .form__label--required::after {
+                content: " *";
+                color: #e53e3e;
+            }
+
+            /* ô nhập liệu */
+            .form__input {
+                width: 100%;
+                padding: 1.2rem;
+                font-size: 1.4rem;
+                color: #2d3748;
+                border: 0.1rem solid #e2e8f0;
+                border-radius: 0.6rem;
+                outline: none;
+                font-family: Arial, sans-serif;
+            }
+
+            /* khóa học quan tâm*/
+            .checkbox-label {
+                display: block;
+                font-size: 1.4rem;
+                color: #4a5568;
+                margin-bottom: 1.2rem;
+                cursor: pointer;
+                position: relative;
+            }
+
+            .checkbox-label input {
+                margin-right: 0.8rem;
+                position: relative;
+                top: 0.1rem;
+            }
+
+            /* nút đăng ký */
+            .form__submit {
+                display: block;
+                width: 100%;
+                padding: 1.4rem;
+                margin-top: 2rem;
+                background: #a855f7;
+                color: #ffffff;
+                font-size: 1.6rem;
+                font-weight: bold;
+                text-align: center;
+                border: none;
+                border-radius: 99rem;
+                cursor: pointer;
+                outline: none;
+            }
+
+            .form__submit:hover {
+                opacity: 0.9;
+            }
+
+            .tooltip {
+                position: absolute;
+                bottom: 100%;
+                left: 0;
+                margin-bottom: 0.8rem;
+
+                background: #1e293b;
+                color: #ffffff;
+                font-size: 1.2rem;
+                font-weight: normal;
+                padding: 0.8rem 1.2rem;
+                border-radius: 0.4rem;
+                white-space: nowrap;
+                pointer-events: none;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 2000;
+            }
+
+            .tooltip::before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 1.5rem;
+
+                border-width: 0.6rem 0.6rem 0 0.6rem;
+                border-style: solid;
+                border-color: #1e293b transparent transparent transparent;
+            }
+
+            .form__input:hover ~ .tooltip,
+            .checkbox-label:hover .tooltip {
+                opacity: 1;
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="sign-up" hidden />
+
+        <label for="sign-up" class="advice-btn">Tư vấn ngay</label>
+        <label for="sign-up" class="overlay"></label>
+
+        <form
+            action="https://api-gateway.fullstack.edu.vn/action_page.php"
+            class="form"
+        >
+            <label for="sign-up" class="form__close">&times;</label>
+
+            <div class="title">Đăng ký tư vấn</div>
+            <div class="desc">
+                Điền thông tin để được tư vấn lộ trình học phù hợp
+            </div>
+
+            <div class="form__group">
+                <label for="name" class="form__label form__label--required">
+                    Họ và tên
+                </label>
+
+                <input
+                    type="text"
+                    name="fullName"
+                    id="name"
+                    class="form__input"
+                    placeholder="Nguyễn Văn A"
+                    required
+                />
+                <span class="tooltip">Nhập họ và tên đầy đủ của bạn</span>
+            </div>
+
+            <div class="form__group">
+                <label for="phone" class="form__label form__label--required">
+                    Số điện thoại
+                </label>
+                <input
+                    type="tel"
+                    name="phoneNumber"
+                    id="phone"
+                    class="form__input"
+                    placeholder="0912345678"
+                    required
+                />
+                <span class="tooltip">
+                    Số điện thoại để chúng tôi liên hệ tư vấn
+                </span>
+            </div>
+
+            <div class="form__group">
+                <label for="email" class="form__label">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form__input"
+                    placeholder="example@gmail.com"
+                />
+                <span class="tooltip">
+                    Email nhận thông tin khóa học (không bắt buộc)
+                </span>
+            </div>
+
+            <div class="form__group">
+                <label class="form__label form__label--required">
+                    Khóa học quan tâm
+                </label>
+
+                <label class="checkbox-label">
+                    <input
+                        type="checkbox"
+                        name="courses[]"
+                        value="HTML & CSS"
+                    />
+                    HTML & CSS
+                    <span class="tooltip">
+                        Khóa nền tảng xây dựng giao diện web
+                    </span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input
+                        type="checkbox"
+                        name="courses[]"
+                        value="JavaScript"
+                    />
+                    JavaScript
+                    <span class="tooltip">Ngôn ngữ lập trình cho web động</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input
+                        type="checkbox"
+                        name="courses[]"
+                        value="Front-end lộ
+                    trình"
+                    />
+                    Front-end lộ trình
+                    <span class="tooltip">
+                        Lộ trình hoàn chỉnh trở thành Front-end Developer
+                    </span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="courses[]" value="ReactJS" />
+                    ReactJS
+                    <span class="tooltip">
+                        Thư viện JavaScript phổ biến nhất hiện nay
+                    </span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input
+                        type="checkbox"
+                        name="courses[]"
+                        value="Chưa rõ – cần tư
+                    vấn"
+                    />
+                    Chưa rõ – cần tư vấn
+                    <span class="tooltip">
+                        Chúng tôi sẽ tư vấn lộ trình phù hợp với bạn
+                    </span>
+                </label>
+
+                <button type="submit" class="form__submit">
+                    ĐĂNG KÝ TƯ VẤN NGAY
+                </button>
+            </div>
+        </form>
+    </body>
+</html>
