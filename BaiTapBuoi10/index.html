@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MENU ĐIỀU HƯỚNG 2 CẤP</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                font-size: 1.6rem;
+                font-size: 62.5%;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            a {
+                text-decoration: none;
+                color: #333333;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            .logo {
+                display: inline-block;
+                vertical-align: middle;
+                width: 38px;
+                margin-right: 15px;
+            }
+
+            .header {
+                margin-top: 5px;
+                padding: 8px 0;
+                text-align: center;
+                border-bottom: 1px solid #dddddd;
+                border-top: 1px solid #dddddd;
+            }
+
+            .nav {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .nav__item {
+                position: relative;
+                font-weight: bold;
+                font-size: 1.4rem;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 15px;
+            }
+
+            .nav__link {
+                display: inline-block;
+                position: relative;
+                padding: 6px 0;
+                transition: color 0.2s ease;
+            }
+
+            .nav__link::after {
+                content: "\25BE";
+                font-size: 1rem;
+                margin-left: 6px;
+                color: #555555;
+                vertical-align: middle;
+                transition: color 0.2s ease;
+            }
+
+            .nav__link::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: #d62828;
+                bottom: 0px;
+                left: 0;
+                display: none;
+            }
+
+            .nav__item:hover .nav__link,
+            .nav__item:hover .nav__link::after {
+                color: #d62828;
+            }
+
+            .nav__item:hover .nav__link::before {
+                display: block;
+            }
+
+            .nav__dropdown {
+                position: absolute;
+                top: 29px;
+
+                min-width: 200px;
+                background-color: #ffffff;
+
+                border: 1px solid #dddddd;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                padding: 5px 0;
+
+                display: none;
+                z-index: 10;
+                text-align: left;
+            }
+
+            .nav__item:hover .nav__dropdown {
+                display: block;
+            }
+
+            .nav__dropdown::before {
+                content: "";
+                position: absolute;
+                top: -12px;
+                left: 0;
+                width: 100%;
+                height: 12px;
+                background-color: transparent;
+            }
+
+            .nav__dropdown-item {
+                display: block;
+                position: relative;
+            }
+
+            .nav__dropdown-link {
+                display: block;
+                padding: 8px 15px;
+                font-weight: normal;
+                font-size: 1.4rem;
+                color: #333333;
+                transition: all 0.2s ease;
+            }
+
+            .nav__dropdown-link:hover {
+                color: #d62828;
+                background-color: #f5f5f5;
+            }
+
+            .nav__dropdown-link--has-sub {
+                position: relative;
+            }
+            .nav__dropdown-link--has-sub::after {
+                content: "\25B8";
+                position: absolute;
+                right: 1.5rem;
+                top: 0;
+                line-height: 3.6rem;
+                color: #777777;
+                font-size: 1rem;
+            }
+            .nav__dropdown-link:hover.nav__dropdown-link--has-sub::after {
+                color: #d62828;
+            }
+
+            .nav__sub-dropdown {
+                position: absolute;
+                top: -5px;
+                left: 100%;
+
+                min-width: 200px;
+                background-color: #ffffff;
+
+                border: 1px solid #e5e5e5;
+
+                padding: 5px 0;
+
+                display: none;
+                z-index: 20;
+            }
+
+            .nav__dropdown-item:hover .nav__sub-dropdown {
+                display: block;
+            }
+
+            .nav__sub-dropdown::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -10px;
+                width: 10px;
+                height: 100%;
+                background-color: transparent;
+            }
+
+            .nav__sub-dropdown-item {
+                display: block;
+            }
+
+            .nav__sub-dropdown-link {
+                display: block;
+                padding: 8px 15px;
+                font-weight: normal;
+                font-size: 1.4rem;
+                color: #333333;
+                transition: all 0.2s ease;
+            }
+
+            .nav__sub-dropdown-link:hover {
+                color: #d62828;
+                background-color: #f5f5f5;
+            }
+
+            .nav__dropdown-item:hover .nav__dropdown-link--has-sub,
+            .nav__dropdown-item:hover .nav__dropdown-link--has-sub::after {
+                color: #d62828;
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <img
+                src="https://fullstack.edu.vn/assets/f8-icon-lV2rGpF0.png"
+                alt=""
+                class="logo"
+            />
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#!" class="nav__link">Thời sự</a>
+                        <!-- Menu cấp 2 -->
+                        <ul class="nav__dropdown">
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Chính trị
+                                </a>
+                            </li>
+
+                            <!-- Bắt đầu: Mục có menu cấp 3 -->
+                            <li class="nav__dropdown-item">
+                                <a
+                                    href="#!"
+                                    class="nav__dropdown-link nav__dropdown-link--has-sub"
+                                >
+                                    Xã hội
+                                </a>
+
+                                <!-- Sub-menu cấp 3 -->
+                                <ul class="nav__sub-dropdown">
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Giao thông
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Môi trường
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Đời sống đô thị
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Kết thúc: Mục có menu cấp 3 -->
+
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Pháp luật
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#!" class="nav__link">Thế giới</a>
+                        <!-- Menu cấp 2: Thế giới -->
+                        <ul class="nav__dropdown">
+                            <li class="nav__dropdown-item">
+                                <a
+                                    href="#!"
+                                    class="nav__dropdown-link nav__dropdown-link--has-sub"
+                                >
+                                    Khu vực
+                                </a>
+                                <!-- Menu cấp 3 -->
+                                <ul class="nav__sub-dropdown">
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Châu Á
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Châu Âu
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Châu Mỹ
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Trung Đông
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Phân tích
+                                </a>
+                            </li>
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Hồ sơ
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#!" class="nav__link">Kinh doanh</a>
+                        <!-- Menu cấp 2: Kinh doanh -->
+                        <ul class="nav__dropdown">
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Doanh nghiệp
+                                </a>
+                            </li>
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Chứng khoán
+                                </a>
+                            </li>
+                            <li class="nav__dropdown-item">
+                                <a
+                                    href="#!"
+                                    class="nav__dropdown-link nav__dropdown-link--has-sub"
+                                >
+                                    Tài chính cá nhân
+                                </a>
+                                <!-- Menu cấp 3 -->
+                                <ul class="nav__sub-dropdown">
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Tiết kiệm
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Đầu tư
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Bảo hiểm
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Bất động sản
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#!" class="nav__link">Góc nhìn</a>
+                        <!-- Menu cấp 2: Góc nhìn -->
+                        <ul class="nav__dropdown">
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Bình luận
+                                </a>
+                            </li>
+                            <li class="nav__dropdown-item">
+                                <a
+                                    href="#!"
+                                    class="nav__dropdown-link nav__dropdown-link--has-sub"
+                                >
+                                    Chuyên gia
+                                </a>
+                                <!-- Menu cấp 3 -->
+                                <ul class="nav__sub-dropdown">
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Kinh tế
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Xã hội
+                                        </a>
+                                    </li>
+                                    <li class="nav__sub-dropdown-item">
+                                        <a
+                                            href="#!"
+                                            class="nav__sub-dropdown-link"
+                                        >
+                                            Công nghệ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-item">
+                                <a href="#!" class="nav__dropdown-link">
+                                    Tác giả
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </body>
+</html>
