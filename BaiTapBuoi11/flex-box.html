@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex box</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .title {
+                font-weight: bold;
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+
+            .container {
+                display: flex;
+
+                width: 600px;
+                height: 200px;
+                margin-bottom: 20px;
+            }
+
+            .item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 60px;
+                height: 60px;
+                background: #5981b1;
+                color: #fff;
+            }
+
+            /* Container 1 */
+            .container-1 {
+                justify-content: space-between;
+            }
+
+            /* Container 2 */
+            .container-2 {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            /* Container 3 */
+            .container-3 {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+            .container-3 .item-3 {
+                margin-top: 30px;
+            }
+
+            /* Container 4 */
+            .container-4 {
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .container-4 .item-2 {
+                margin-right: 30px;
+            }
+
+            /* Container 5 */
+            .container-5 {
+                align-items: center;
+                justify-content: center;
+                flex-direction: column-reverse;
+            }
+
+            /* Container 6 */
+            .container-6 {
+                justify-content: space-between;
+            }
+
+            /* Container 7 */
+            .container-7 {
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .container-7 .item-1 {
+                margin-bottom: 40px;
+            }
+
+            /* Container 8 */
+            .container-8 {
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .container-8 .item-2 {
+                margin: auto;
+            }
+
+            /* Container 9 */
+            .container-9 {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .container-9 .item-1 {
+                margin-top: 35px;
+            }
+
+            .container-9 .item-2 {
+                margin: auto 0;
+            }
+
+            .container-9 .item-3 {
+                margin-top: 105px;
+            }
+
+            /* Container 10 */
+            .container-10 .item-1 {
+                margin-bottom: auto;
+            }
+
+            .container-10 .item-2 {
+                margin: auto;
+            }
+
+            .container-10 .item-3 {
+                margin-top: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Container 1 -->
+        <div class="title">Container 1</div>
+        <div class="container container-1">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <!-- Container 2 -->
+        <div class="title">Container 2</div>
+        <div class="container container-2">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <!-- Container 3 -->
+        <div class="title">Container 3</div>
+        <div class="container container-3">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item item-3">3</div>
+        </div>
+
+        <!-- Container 4 -->
+        <div class="title">Container 4</div>
+        <div class="container container-4">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <!-- Container 5 -->
+        <div class="title">Container 5</div>
+        <div class="container container-5">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <!-- Container 6 -->
+        <div class="title">Container 6</div>
+        <div class="container container-6">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <!-- Container 7 -->
+        <div class="title">Container 7</div>
+        <div class="container container-7">
+            <div class="item item-1">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <!-- Container 8 -->
+        <div class="title">Container 8</div>
+        <div class="container container-8">
+            <div class="item">1</div>
+            <div class="item item-2">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <!-- Container 9 -->
+        <div class="title">Container 9</div>
+        <div class="container container-9">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+        </div>
+
+        <!-- Container 10 -->
+        <div class="title">Container 10</div>
+        <div class="container container-10">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+        </div>
+    </body>
+</html>
