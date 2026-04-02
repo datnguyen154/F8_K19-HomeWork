@@ -33,32 +33,28 @@ a {
     border: 2px solid #e0e0e0;
 }
 
-.card:hover {
-    border: none;
-}
-
 .card-ui:hover {
-    box-shadow: 0 0 0 3px #ff6b6b;
+    border-color: #ff6b6b;
 }
 
 .card-theme:hover {
-    box-shadow: 0 0 0 3px #4ecdc4;
+    border-color: #4ecdc4;
 }
 
 .card-digital:hover {
-    box-shadow: 0 0 0 3px #f9a825;
+    border-color: #f9a825;
 }
 
 .card-web:hover {
-    box-shadow: 0 0 0 3px #5e9cff;
+    border-color: #5e9cff;
 }
 
 .card-res:hover {
-    box-shadow: 0 0 0 3px #9b59b6;
+    border-color: #9b59b6;
 }
 
 .card-sup:hover {
-    box-shadow: 0 0 0 3px #7cb342;
+    border-color: #7cb342;
 }
 
 .card__title {
