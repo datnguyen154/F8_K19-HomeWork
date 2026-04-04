@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Helvetica";
+
+    src:
+        url("./fonts/helvetica.woff2") format("woff2"),
+        url("./fonts/helvetica.ttf") format("truetype");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Helvetica", sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.strip {
+    flex: 1;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.strip__heading {
+    font-weight: 900;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.strip:hover {
+    flex: 5;
+}
+
+.strip img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 1;
+}
+
+.strip:hover img {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    z-index: 2;
+}
+
+.strip:hover .overlay {
+    opacity: 1;
+}
+
+.strip .strip__heading {
+    position: relative;
+    z-index: 3;
+    color: white;
+    font-weight: 900;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.strip:hover .strip__heading {
+    opacity: 0;
+}
