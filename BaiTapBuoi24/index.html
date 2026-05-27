@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FakeStore - Danh sách sản phẩm</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-cart-shopping"></i> FakeStore
+            </div>
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+            </div>
+            <div class="cart-wrapper">
+                <div class="cart-icon">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+                <span id="cart-badge" class="cart-badge">0</span>
+            </div>
+        </header>
+
+        <div class="container">
+            <aside>
+                <div class="sidebar-box">
+                    <div class="sidebar-title">
+                        <i class="fa-solid fa-sliders"></i> Danh mục
+                    </div>
+                    <ul class="category-list">
+                        <li class="category-item active">
+                            Tất cả sản phẩm <span class="count-badge">20</span>
+                        </li>
+                        <li class="category-item">
+                            Men's clothing <span class="count-badge">4</span>
+                        </li>
+                        <li class="category-item">
+                            Jewelery <span class="count-badge">4</span>
+                        </li>
+                        <li class="category-item">
+                            Electronics <span class="count-badge">6</span>
+                        </li>
+                        <li class="category-item">
+                            Women's clothing <span class="count-badge">6</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main>
+                <div class="main-header">
+                    <h2>Tất cả sản phẩm</h2>
+                    <p>Hiển thị <span id="product-count">0</span> sản phẩm</p>
+                </div>
+                <div id="products-grid" class="products-grid">
+                    <div class="loading">Đang tải dữ liệu sản phẩm...</div>
+                </div>
+            </main>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
