@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hồ Sơ Cá Nhân</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            .profile-container {
+                background-color: #ffffff;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 400px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .avatar {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 15px;
+                border: 3px solid #007bff;
+                padding: 3px;
+            }
+
+            .profile-container h2 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .info-group {
+                text-align: left;
+                background-color: #f8f9fa;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+            }
+
+            .info-group p {
+                margin-bottom: 10px;
+                color: #555;
+                font-size: 15px;
+            }
+
+            .info-group p:last-child {
+                margin-bottom: 0;
+            }
+
+            .logout-btn {
+                width: 100%;
+                padding: 12px;
+                background-color: #dc3545;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                font-weight: 600;
+            }
+
+            .logout-btn:hover {
+                background-color: #c82333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="profile-container">
+            <div id="loading">
+                <h3>Đang tải thông tin...</h3>
+            </div>
+
+            <div id="profile-content" style="display: none">
+                <img id="avatar" src="" alt="Ảnh đại diện" class="avatar" />
+                <h2 id="full-name">Tên Người Dùng</h2>
+
+                <div class="info-group">
+                    <p>
+                        <strong>Username:</strong> <span id="user-name"></span>
+                    </p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Giới tính:</strong> <span id="gender"></span></p>
+                </div>
+
+                <button id="logout-btn" class="logout-btn">Đăng Xuất</button>
+            </div>
+        </div>
+
+        <script src="./profile.js"></script>
+    </body>
+</html>
