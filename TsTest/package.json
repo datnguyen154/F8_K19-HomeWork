@@ -1,0 +1,15 @@
+{
+    "type": "module",
+    "devDependencies": {
+        "@types/node": "^26.1.1",
+        "tsx": "^4.23.1",
+        "typescript": "^7.0.2"
+    },
+    "scripts": {
+        "dev": "tsx ./index.ts",
+        "build": "tsc"
+    },
+    "dependencies": {
+        "uuid": "^14.0.1"
+    }
+}
